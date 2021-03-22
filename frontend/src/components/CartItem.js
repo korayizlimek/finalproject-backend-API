@@ -12,17 +12,21 @@ const CartItem = () => {
             </div>
 
             <Link to={`/product/${111}`} className="cartitem__name">
-                <p>product1</p>
+                <p>Adana Kebap</p>
             </Link>
 
-            <p className="cartitem__price">$499.99</p>
+            <p className="cartitem__price">20 TL</p>
 
-            <select className="cartitem__sekect">
+            <select className="cartitem__select">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
+
+            <button className="cartitem__deleteBtn">
+                <i className="fas fa-trash"></i>
+            </button>
         </div>
     );
 };

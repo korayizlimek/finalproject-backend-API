@@ -1,23 +1,31 @@
 import "./Navbar.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../logo.png";
 
 const Navbar = ({ click }) => {
     return (
         <nav className="navbar">
             {/* Logo */}
             <div className="navbar__title">
-                <img
+                {/* <img
                     className="header__logo"
                     src={logo}
                     alt="../doc/pngegg.png"
-                />
+                /> */}
                 <h3>BitirmeProjesi</h3>
             </div>
 
             {/* Links */}
             <ul className="navbar__links">
+                <li>
+                    <Link to="/login">
+                        <div className="cart__link">
+                            <span className="header__optionBottom">
+                                Giriş Yap
+                            </span>
+                        </div>
+                    </Link>
+                </li>
                 <li>
                     <Link to="/cart" className="cart__link">
                         {/* Icon */}
@@ -27,7 +35,10 @@ const Navbar = ({ click }) => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">Menu</Link>
+                    <Link to="/" className="cart__link">
+                        <i class="fas fa-utensils fa-lg"></i>
+                        Menu
+                    </Link>
                 </li>
             </ul>
 

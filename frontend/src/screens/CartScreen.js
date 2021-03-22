@@ -10,11 +10,15 @@ const CartScreen = () => {
                 <h2>Shopping Cart</h2>
 
                 <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
+                <CartItem />
             </div>
             <div className="cartscreen__right">
                 <div className="cartscreen__info">
-                    <p>Subtotal (0) items</p>
-                    <p>$499.99</p>
+                    <p>Toplam (6) ürün</p>
+                    <p>200 TL</p>
                 </div>
                 <div>
                     <button>Odemeyi Tamamla</button>

@@ -12,7 +12,7 @@ function SideDrawer({ show, click }) {
         <div className={sideDrawerClass.join(" ")}>
             <ul className="sidedrawer__links" onClick={click}>
                 <li>
-                    <Link to="/cart">
+                    <Link to="/cart" className="sidedrawer__link">
                         <i className="fas fa-shopping-cart"></i>
                         <span>
                             Sepete Git{" "}
@@ -23,7 +23,10 @@ function SideDrawer({ show, click }) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">Menu</Link>
+                    <Link to="/" className="sidedrawer__link">
+                        <i class="fas fa-utensils fa-lg"></i>
+                        <span>Menu</span>
+                    </Link>
                 </li>
             </ul>
         </div>

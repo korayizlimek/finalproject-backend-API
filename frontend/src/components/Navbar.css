@@ -20,11 +20,12 @@
     height: 60px;
     width: 60px;
     object-fit: contain;
-    /* margin-left: 20px; */
+    margin-left: 20px;
 }
 
 .navbar__title h3 {
-    color: #f4f4f4;
+    /* color: #f4f4f4; */
+    color: #cbb26a;
     font-size: 1.4rem;
     cursor: pointer;
 }
@@ -53,14 +54,20 @@
     margin-left: 8px;
 }
 
+.navbar__links > li > a > i {
+    margin-right: 5px;
+}
+
 .cart__link {
-    background: #333;
+    /* background: #333; */
     padding: 10px;
     border-radius: 8px;
+    height: 40px;
 }
 
 .cart__link:hover {
-    background: #dd219e;
+    background: #cbb26a;
+    /* background: #dd219e; */
     color: #f4f4f4;
 }
 

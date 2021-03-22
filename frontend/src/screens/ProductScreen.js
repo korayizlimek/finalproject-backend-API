@@ -3,20 +3,26 @@ import "./ProductScreen.css";
 const ProductScreen = () => {
     return (
         <div className="productscreen">
-            <div className="left__image">
-                <img
-                    src="https://cdn.yemek.com/mnresize/940/940/uploads/2019/01/ev-usulu-urfa-kebap-tarifi.jpg"
-                    alt="productname"
-                />
-            </div>
+            <div className="productscreen__left">
+                <div className="left__image">
+                    <img
+                        src="https://cdn.yemek.com/mnresize/940/940/uploads/2019/01/ev-usulu-urfa-kebap-tarifi.jpg"
+                        alt="productname"
+                    />
+                </div>
 
-            <div className="product__info">
-                <p className="info__name">Product1</p>
-                <p className="info__price">$499.99</p>
-                <p className="product__description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Cumque, veniam.
-                </p>
+                <div className="left__info">
+                    <p className="info__name">Adana Kebap</p>
+                    <p className="info__price">20 TL</p>
+                    <p className="info__description">
+                        Acılı adana kebabı Adana yoremize aittir.
+                        Dunyaca taninan yemeklerden basta gelir.
+                    </p>
+                    <p className="info__contains">
+                        sogan salatasi, kuzu eti, kirmizi pul
+                        biber,sogan salatasi
+                    </p>
+                </div>
             </div>
             <div className="productscreen__right">
                 <div className="right__info">
