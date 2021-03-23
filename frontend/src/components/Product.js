@@ -1,22 +1,19 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
 
-const Product = () => {
+const Product = ({ imageUrl, name, price, productId }) => {
     return (
         <div className="product">
             <div className="product__info">
-                <img
-                    src="https://cdn.yemek.com/mnresize/940/940/uploads/2019/01/ev-usulu-urfa-kebap-tarifi.jpg"
-                    alt="productname"
-                />
+                <img src={imageUrl} alt={name} />
 
-                <p className="info__name">Adana Kebap</p>
+                <p className="info__name">{name}</p>
                 <p className="product__description">
                     Acili Adana Kebap - Erkek Kuzu etinden yapilmistir
                 </p>
-                <p className="info__price">20 TL</p>
+                <p className="info__price">{price}</p>
                 <Link
-                    to={`/product/${1111}`}
+                    to={`/product/${productId}`}
                     className="info__button"
                 >
                     incele

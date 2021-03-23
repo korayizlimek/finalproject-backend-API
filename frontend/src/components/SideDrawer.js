@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom";
 import "./SideDrawer.css";
 
+import { useSelector } from "react-redux";
+
 function SideDrawer({ show, click }) {
     const sideDrawerClass = ["sidedrawer"];
 
     if (show) {
         sideDrawerClass.push("show");
     }
+
+    const cart = useSelector((state) => state.cart);
+    const { cartItems } = cart;
+
+    const getCartCount = () => {
+        return cartItems.reduce(
+            (qty, item) => qty + Number(item.qty),
+            0
+        );
+    };
 
     return (
         <div className={sideDrawerClass.join(" ")}>
@@ -17,7 +29,7 @@ function SideDrawer({ show, click }) {
                         <span>
                             Sepete Git{" "}
                             <span className="sidedrawer__cartbadge">
-                                0
+                                {getCartCount()}
                             </span>
                         </span>
                     </Link>
