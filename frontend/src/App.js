@@ -11,6 +11,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import Login from "./screens/Login";
+import Register from "./screens/Register";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -41,6 +42,12 @@ function App() {
                             exact
                             path="/login"
                             component={Login}
+                        />
+
+                        <Route
+                            exact
+                            path="/register"
+                            component={Register}
                         />
 
                         <Route

@@ -1,0 +1,42 @@
+@BASE_URL = http://localhost:5000/api
+@TOKEN = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWMzZTVhMjYxOGE2YTI4N2MwNGQzNWUiLCJpYXQiOjE2MDI2NDkyNzgsImV4cCI6MTYwMjkwODQ3OH0.VX6A_Lng6cW_IqKhB5qc8uc14OtewZP1PQvBk6xe8iw
+
+###
+GET {{BASE_URL}}/user/login
+# Authorization: {{TOKEN}}
+
+
+###
+GET {{BASE_URL}}/user/register
+# Authorization: {{TOKEN}}
+
+
+###
+POST {{BASE_URL}}/user/register
+Content-Type: application/json
+
+{
+    "name":"koray",
+    "surname": "izlimek",
+    "email" : "test@test.com",
+    "password" : "1234567",
+    "repassword" : "1234567"
+}
+
+###
+POST {{BASE_URL}}/user/login
+Content-Type: application/json
+
+{
+    "email" : "test@test.com",
+    "sifre" : "123456"
+}
+
+###
+POST {{BASE_URL}}/gorevler
+Authorization: {{TOKEN}}
+Content-Type: application/json
+
+{
+    "tanim":"Yeni görev"
+}

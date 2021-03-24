@@ -1,7 +1,13 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
 
-const Product = ({ imageUrl, name, price, productId }) => {
+const Product = ({
+    imageUrl,
+    name,
+    price,
+    productId,
+    addToCartHandler,
+}) => {
     return (
         <div className="product">
             <div className="product__info">
@@ -19,7 +25,11 @@ const Product = ({ imageUrl, name, price, productId }) => {
                     incele
                 </Link>
 
-                <button type="submit" className="product__button">
+                <button
+                    type="submit"
+                    className="product__button"
+                    onClick={() => addToCartHandler(productId)}
+                >
                     Sepete Ekle
                 </button>
             </div>

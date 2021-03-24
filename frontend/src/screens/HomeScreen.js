@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 // Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
+import { addToCart } from "../redux/actions/cartActions";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -18,6 +19,10 @@ const HomeScreen = () => {
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);
+
+    const addToCartHandler = (productId) => {
+        dispatch(addToCart(productId, 1));
+    };
 
     return (
         <div className="homescreen">
@@ -36,6 +41,7 @@ const HomeScreen = () => {
                             name={product.name}
                             price={product.price}
                             imageUrl={product.imageUrl}
+                            addToCartHandler={addToCartHandler}
                         />
                     ))
                 )}

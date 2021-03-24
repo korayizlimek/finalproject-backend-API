@@ -25,7 +25,7 @@ const ProductScreen = ({ match, history }) => {
 
     const addToCartHandler = () => {
         dispatch(addToCart(product._id, qty));
-        history.push("/cart");
+        history.push("/");
     };
 
     return (
@@ -52,13 +52,7 @@ const ProductScreen = ({ match, history }) => {
                                 {product.price} TL
                             </p>
                             <p className="info__description">
-                                Acılı adana kebabı Adana yoremize
-                                aittir. Dunyaca taninan yemeklerden
-                                basta gelir.
-                            </p>
-                            <p className="info__contains">
-                                sogan salatasi, kuzu eti, kirmizi pul
-                                biber,sogan salatasi
+                                {product.description}
                             </p>
                         </div>
                     </div>

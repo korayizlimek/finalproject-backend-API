@@ -6,6 +6,8 @@ const products = [
         species: "Izgara",
         countInStock: 50,
         price: 20,
+        description:
+            "Acili Adana Kebap - Erkek Kuzu etinden yapilmistir",
     },
     {
         name: "Tavuk şiş",
@@ -14,6 +16,7 @@ const products = [
         species: "Izgara",
         countInStock: 40,
         price: 15,
+        description: "Tavuk iki şiş olarak şişlenir ve servis edilir",
     },
     {
         name: "kuşbaşı şiş",
@@ -22,6 +25,8 @@ const products = [
         species: "Izgara",
         countInStock: 35,
         price: 25,
+        description:
+            "Kuzu etinden yapılmış olup, Ozel baharatlarla servis edilir",
     },
     {
         name: "şalgam",
@@ -30,6 +35,7 @@ const products = [
         species: "Izgara",
         countInStock: 100,
         price: 4,
+        description: "Adanamızın yöresel ve özel içeceğidir",
     },
 ];
 
