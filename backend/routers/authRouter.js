@@ -5,7 +5,7 @@ const validatorMiddleware = require("../middleware/validationMiddleware");
 
 router.get("/login", authController.showLogin);
 
-// router.get("/register", authController.showRegister);
+router.get("/register", authController.showRegister);
 // router.post(
 //     "/register",
 //     validatorMiddleware.validateNewUser(),
@@ -14,6 +14,7 @@ router.get("/login", authController.showLogin);
 
 router.get("/forgetpassword", authController.showForgetPassword);
 
+router.get("/register", authController.showRegister);
 //deneme
 router.post(
     "/register",

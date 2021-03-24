@@ -27,7 +27,9 @@ class Register extends Component {
 
     callApi = async () => {
         const response = await fetch("/api/user/register");
+        console.log(response);
         const body = await response.json();
+        console.log(body);
         if (response.status !== 200) throw Error(body.message);
         return body;
     };

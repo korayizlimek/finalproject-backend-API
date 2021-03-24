@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
 
-session = require("express-session");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 connectDB();
 
@@ -20,6 +21,13 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.use(flash());
+//local diyerek erisebilecegiz
+app.use((req, res, next) => {
+    res.locals.validationError = req.flash("validationError");
+    next();
+});
 
 let sayac = 0;
 app.get("/", (req, res) => {
