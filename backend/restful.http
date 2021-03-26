@@ -1,42 +1,72 @@
-@BASE_URL = http://localhost:5000/api
-@TOKEN = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWMzZTVhMjYxOGE2YTI4N2MwNGQzNWUiLCJpYXQiOjE2MDI2NDkyNzgsImV4cCI6MTYwMjkwODQ3OH0.VX6A_Lng6cW_IqKhB5qc8uc14OtewZP1PQvBk6xe8iw
 
-###
-GET {{BASE_URL}}/user/login
-# Authorization: {{TOKEN}}
+@BASEURL = http://localhost:5000/api
 
+//
+GET {{BASEURL}}/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkOThiMmU3YjBjOTRkMjQ5ZDMxZDQiLCJlbWFpbCI6ImtvcmF5MUBnbWFpbC5jb20iLCJpYXQiOjE2MTY3NDY2ODEsImV4cCI6MTYxNjc1MDI4MX0.CcavgezQhl1oP8Ir0jKlIgh-d4zj_20PtjyGIsoRKtU
 
-###
-GET {{BASE_URL}}/user/register
-# Authorization: {{TOKEN}}
+### 
+//GET id
+GET {{BASEURL}}/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkOThiMmU3YjBjOTRkMjQ5ZDMxZDQiLCJlbWFpbCI6ImtvcmF5MUBnbWFpbC5jb20iLCJpYXQiOjE2MTY3NDY2ODEsImV4cCI6MTYxNjc1MDI4MX0.CcavgezQhl1oP8Ir0jKlIgh-d4zj_20PtjyGIsoRKtU
 
-
-###
-POST {{BASE_URL}}/user/register
+### 
+//  POST JSON
+POST {{BASEURL}}/users
 Content-Type: application/json
 
 {
-    "name":"koray",
-    "surname": "izlimek",
-    "email" : "test@test.com",
-    "password" : "1234567",
-    "repassword" : "1234567"
+    "name" : "koray",
+    "surname" : "koray",
+    "userName" : "koray",
+    "email" : "koray@gmail.com",
+    "password" : "123456"    
 }
 
 ###
-POST {{BASE_URL}}/user/login
+//  Giris
+POST {{BASEURL}}/users/login
 Content-Type: application/json
 
 {
-    "email" : "test@test.com",
-    "sifre" : "123456"
+    "email" : "admin@gmail.com",
+    "password" : "123456"    
 }
 
 ###
-POST {{BASE_URL}}/gorevler
-Authorization: {{TOKEN}}
+// urlencoded
+POST {{BASEURL}}/users
+Content-Type: application/x-www-form-urlencoded
+
+isim=koray&yas=23
+
+###
+PATCH {{BASEURL}}/users/605cf397effb8d278c7e5f61
 Content-Type: application/json
 
 {
-    "tanim":"Yeni görev"
+    "surname" : "recaii"
 }
+
+###
+PATCH {{BASEURL}}/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkNjYwMzE2MDMwMjRkMzg1M2M2NzIiLCJlbWFpbCI6ImtyeWtyeUBnbWFpbC5jb20iLCJpYXQiOjE2MTY3MzcyNjgsImV4cCI6MTYxNjc0MDg2OH0.5N9ssxalfxL_og8njSZoxL4RvFzEEaFzFysIqlv0BEs
+
+{
+    "name" : "plray"
+}
+
+###
+DELETE {{BASEURL}}/users/605cdf18cfa8d13420bd74e2
+Content-Type: application/json
+
+###
+DELETE {{BASEURL}}/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkOThiMmU3YjBjOTRkMjQ5ZDMxZDQiLCJlbWFpbCI6ImtvcmF5MUBnbWFpbC5jb20iLCJpYXQiOjE2MTY3NDY2ODEsImV4cCI6MTYxNjc1MDI4MX0.CcavgezQhl1oP8Ir0jKlIgh-d4zj_20PtjyGIsoRKtU
+
+
+###
+GET {{BASEURL}}/users/deleteAll
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkODU1NTAzM2NjNjE5NTQyZDRlNTQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTYxNjc0ODkzNiwiZXhwIjoxNjE2NzUyNTM2fQ.qyzyjCr2lnhbrg8FKxp9kPgK7cVVQavvHbnb9i70AeQ
