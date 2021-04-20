@@ -61,7 +61,7 @@ const createNewUser = async (req, res, next) => {
         }
     } catch (err) {
         next(err);
-        // console.error("user kaydederken hata:" + err);
+        console.error("user kaydederken hata:" + err);
     }
     // res.status(200).json(req.body);
 };

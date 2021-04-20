@@ -1,17 +1,24 @@
 import "./Navbar.css";
-import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserMe, signoutUser } from "../redux/actions/userAction";
 
 const Navbar = ({ click }) => {
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
 
     const getCartCount = () => {
-        return cartItems.reduce(
-            (qty, item) => qty + Number(item.qty),
-            0
-        );
+        return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
+    };
+
+    const { user } = useSelector((state) => state.user);
+
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const handlerOut = () => {
+        dispatch(signoutUser());
+        history.push("/");
     };
 
     return (
@@ -29,13 +36,24 @@ const Navbar = ({ click }) => {
             {/* Links */}
             <ul className="navbar__links">
                 <li>
-                    <Link to="/login">
+                    {user.length < 1 ? (
+                        <Link to="/login">
+                            <div className="cart__link">
+                                <span className="header__optionBottom">
+                                    Giriş Yap
+                                </span>
+                            </div>
+                        </Link>
+                    ) : (
                         <div className="cart__link">
-                            <span className="header__optionBottom">
-                                Giriş Yap
+                            <span
+                                onClick={handlerOut}
+                                className="header__optionBottom"
+                            >
+                                <i class="far fa-user">{user.name}</i>
                             </span>
                         </div>
-                    </Link>
+                    )}
                 </li>
                 <li>
                     <Link to="/cart" className="cart__link">

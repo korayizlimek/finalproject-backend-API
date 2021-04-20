@@ -29,8 +29,7 @@ const catchError = (err, req, res, next) => {
     }
     if (err.code === 66) {
         return res.json({
-            message:
-                "Degistirilemez bir alani guncellemeye calistiniz",
+            message: "Degistirilemez bir alani guncellemeye calistiniz",
             errorCode: 400,
         });
     }

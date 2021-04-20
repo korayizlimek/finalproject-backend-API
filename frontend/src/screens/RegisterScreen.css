@@ -38,11 +38,11 @@
     margin-bottom: 20px;
 }
 
-.register__container > form > h5 {
+.register__container > form > div {
     margin-bottom: 5px;
 }
 
-.register__container > form > input {
+.register__container > form > div > input {
     height: 30px;
     margin-bottom: 10px;
     background-color: white;

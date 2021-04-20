@@ -1,10 +1,40 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { getUser } from "../redux/actions/userAction";
 import "./Login.css";
 
 function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPasword] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [password, setPasword] = useState("");
+
+    const [login, setLogin] = useState({
+        email: "",
+        password: "",
+    });
+
+    const onInputChange = (e) => {
+        setLogin({ ...login, [e.target.name]: e.target.value });
+    };
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        dispatch(getUser(login));
+        history.push("/");
+    };
+
+    const user = useSelector((state) => state.getUser);
+    // const { user } = user;
+
+    // const { name } = user;
+    // console.log(name);
+    // console.log(name);
+    // useEffect(() => {
+    //     dispatch(getUser(login));
+    // });
 
     return (
         <div className="login">
@@ -14,18 +44,22 @@ function Login() {
                     <h5>E-mail</h5>
                     <input
                         type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        name="email"
+                        value={login.email}
+                        onChange={onInputChange}
                     />
 
                     <h5>Sifre</h5>
                     <input
                         type="password"
-                        value={password}
-                        onChange={(e) => setPasword(e.target.value)}
+                        name="password"
+                        value={login.password}
+                        onChange={onInputChange}
                     />
-
-                    <button className="login__signInButton">
+                    <button
+                        className="login__signInButton"
+                        onClick={onFormSubmit}
+                    >
                         Giriş Yap
                     </button>
                 </form>
