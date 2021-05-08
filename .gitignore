@@ -3,8 +3,9 @@
 #personal
 .todos
 .sil.js
-backendone
-
+/backendone
+/frontend 
+/frontend-mobile
 
 # dependencies
 /node_modules

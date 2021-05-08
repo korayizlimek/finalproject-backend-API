@@ -3,12 +3,12 @@
  
 //
 GET {{BASEURL}}/users
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkOThiMmU3YjBjOTRkMjQ5ZDMxZDQiLCJlbWFpbCI6ImtvcmF5MUBnbWFpbC5jb20iLCJpYXQiOjE2MTY3NDY2ODEsImV4cCI6MTYxNjc1MDI4MX0.CcavgezQhl1oP8Ir0jKlIgh-d4zj_20PtjyGIsoRKtU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc2OGFlZTJmM2VkODAzZTQyOTkyMjAiLCJlbWFpbCI6Im9ybmVrZ2lyaXNAZ21haWwuY29tIiwiaWF0IjoxNjE5NzYyNzAwLCJleHAiOjE2MTk3NjYzMDB9.IWmOyZj-srF6ZJSIhMGuR4oDD6C--r_iHLe93c6GMxA
 
 ### 
 //GET id
 GET {{BASEURL}}/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc2OGFlZTJmM2VkODAzZTQyOTkyMjAiLCJlbWFpbCI6Im9ybmVrZ2lyaXNAZ21haWwuY29tIiwiaWF0IjoxNjE4NDA2NzcxLCJleHAiOjE2MTg0MTAzNzF9.eFr_JfkDGjdjZDQgVwgQXfzSGuX5N4ZUYFOjvvwo_lU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc2OGFlZTJmM2VkODAzZTQyOTkyMjAiLCJlbWFpbCI6Im9ybmVrZ2lyaXNAZ21haWwuY29tIiwiaWF0IjoxNjE5NzYyNzAwLCJleHAiOjE2MTk3NjYzMDB9.IWmOyZj-srF6ZJSIhMGuR4oDD6C--r_iHLe93c6GMxA
 
 ### 
 //  POST JSON
@@ -80,3 +80,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkODU1N
 ###
 GET {{BASEURL}}/users/deleteAll
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDVkODU1NTAzM2NjNjE5NTQyZDRlNTQiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTYxNjc0ODkzNiwiZXhwIjoxNjE2NzUyNTM2fQ.qyzyjCr2lnhbrg8FKxp9kPgK7cVVQavvHbnb9i70AeQ
+
+
+###
+GET http://localhost:5000/api/products
